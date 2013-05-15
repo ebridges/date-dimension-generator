@@ -1,9 +1,5 @@
-drop table t_holidays;
-drop table t_dates;
 
--- http://dbdsgnr.appspot.com/app#agdkYmRzZ25ycg4LEgZTY2hlbWEYu_ddDA
-
-CREATE TABLE t_dates
+CREATE TABLE dp_master.t_dates
 (
   date_id integer,
   year smallint,
@@ -12,27 +8,25 @@ CREATE TABLE t_dates
   day_of_year smallint,
   day_of_week smallint,
   quarter smallint,
-  yyyy_mm_dd char(10),
-  yyyy_mm char(8),
-  quarter_name char(2),
-  month_name char(16),
-  day_name char(16),
-  is_weekend bit,
+  yyyy_mm_dd varchar(10),
+  yyyy_mm varchar(8),
+  quarter_name varchar(2),
+  month_name varchar(16),
+  day_name varchar(16),
+  is_weekend boolean,
   CONSTRAINT t_dates_pk PRIMARY KEY (date_id)
 ) WITH (
   OIDS=FALSE
 );
 
-CREATE TABLE t_holidays
+CREATE TABLE dp_master.t_holidays
 (
-  holiday_id char,
   date_id integer,
   country char(2),
   name character varying(64),
-  is_bank_holiday bit,
-  is_actual bit,
-  is_observed bit,
-  CONSTRAINT t_holidays_pk PRIMARY KEY (holiday_id)
+  is_bank_holiday boolean,
+  is_actual boolean,
+  is_observed boolean
 ) WITH (
   OIDS=FALSE
 );

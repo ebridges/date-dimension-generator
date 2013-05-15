@@ -83,7 +83,7 @@ public class HolidayListing {
     }
 
     private int getHolidayId(LocalDate holiday) {
-        return holiday.getYear() + holiday.getMonthOfYear() + holiday.getDayOfMonth();
+        return Util.formatDateId(holiday.getYear(), holiday.getMonthOfYear(), holiday.getDayOfMonth());
     }
 
     private String getStringValue(Node node, String name) {
@@ -141,16 +141,16 @@ class HolidayInfo implements Comparable<HolidayInfo> {
         return date;
     }
 
-    public int isActual() {
-        return actual ? 1 : 0;
+    public boolean isActual() {
+        return actual;
     }
 
-    public int isObserved() {
-        return observed ? 1 : 0;
+    public boolean isObserved() {
+        return observed;
     }
 
-    public int isBankHoliday() {
-        return bankHoliday ? 1 : 0;
+    public boolean isBankHoliday() {
+        return bankHoliday;
     }
 
     @Override

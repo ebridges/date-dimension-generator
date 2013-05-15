@@ -40,7 +40,7 @@ class DateInfo {
     }
 
     public int getDateId() {
-        return date.getYear() + date.getMonthOfYear() + date.getDayOfMonth();
+        return Util.formatDateId(date.getYear(), date.getMonthOfYear(), date.getDayOfMonth());
     }
 
     public int getYear() {
@@ -99,8 +99,8 @@ class DateInfo {
         return DateTimeFormat.forPattern("MMMM").print(date);
     }
 
-    public int isWeekend() {
-        return date.getDayOfWeek() > 5 ? 1 : 0;
+    public boolean isWeekend() {
+        return date.getDayOfWeek() > 5;
     }
 
     public LocalDate getDate() {
