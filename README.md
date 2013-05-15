@@ -5,5 +5,5 @@ Generates a basic Kimball-esque date dimension with holidays for a data warehous
 
 ## To Do
 
-* Add capability to generate date views
+* <del>Add capability to generate date views</del>
 * Add min/max dates, and a "null" date
